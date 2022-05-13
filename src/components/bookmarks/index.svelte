@@ -1,28 +1,27 @@
-<script>
-	import Category from './category.svelte';
-	import { onDestroy } from 'svelte';
-	import { tree } from '../../store/index.js';
+<script lang="ts">
+  import type { BookmarkNode } from "./../../types";
+  import Node from "./node.svelte";
+  import { tree } from "../../store/index.js";
 
-	let categories = [];
-	const unsub = tree.subscribe((t) => {
-		categories = t?.children ?? [];
-	})
-	onDestroy(unsub)
+  let nodes: BookmarkNode[] = [];
+
+  $: nodes =
+    $tree?.[0]?.children?.find((nodes) => nodes.id === "1")?.children ?? [];
+  $: console.log(nodes);
 </script>
 
 <div>
-	{#each categories as category}
-		<Category {category}/>
-	{/each}
+  {#each nodes as node}
+    <Node {node} />
+  {/each}
 </div>
 
 <style>
-	div {
-		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: flex-start;
-	}
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 </style>

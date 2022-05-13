@@ -1,6 +1,6 @@
 {
-	"name": "Svelte Homescreen",
-	"description": "Some description idk hahah",
+	"name": "Zovomat's Homescreen",
+	"description": "A synthwave-ish chrome startpage",
 	"version": "0.2",
 	"manifest_version": 3,
 	"chrome_url_overrides": {
