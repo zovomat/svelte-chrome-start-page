@@ -17,18 +17,20 @@
   };
 </script>
 
-<a class="swing-in-top-fwd-delayed" href={item.url} on:click={click}>
-  {item.title}
-</a>
+<div>
+  <a class="swing-in-top-fwd" href={item.url} on:click={click}>
+    {item.title}
+  </a>
+</div>
 
 <style>
   a {
+    width: auto;
     cursor: pointer;
     display: inline-block;
     color: inherit;
-    padding: 0.7rem 1rem;
+    padding: 0 1rem;
     box-sizing: border-box;
-    width: 100%;
     text-decoration: none;
     text-shadow: 0px 0px 12px #78efff;
     /* background: rgba(0, 0, 0, 0); */

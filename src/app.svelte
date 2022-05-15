@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Container from "./components/container.svelte";
+  import Search from "./components/search.svelte";
+  import Layout from "./components/layout.svelte";
   import System from "./components/system/index.svelte";
   import Bookmarks from "./components/bookmarks/index.svelte";
   import Clock from "./components/clock.svelte";
@@ -11,7 +12,16 @@
   }
 </script>
 
-<Container>
+<Layout>
   <Clock />
+  <Search />
   <Bookmarks />
-</Container>
+  <div class="footer" />
+</Layout>
+
+<style>
+  .footer {
+    height: 2rem;
+    grid-area: footer;
+  }
+</style>
