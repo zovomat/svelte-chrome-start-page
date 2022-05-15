@@ -5,9 +5,9 @@
 <style>
   .layout {
     display: grid;
-    grid-template-columns: [main] 3fr [side] 2fr;
+    grid-template-columns: [left] 1fr [main] 3fr [side] 2fr;
     grid-template-rows: [clock-row] 3fr [search-row] 1fr [bookmarks-row] 50vh [footer] auto;
-    grid-template-areas: "clock gmt" "search ." "bookmarks ." ". footer";
+    grid-template-areas: ". clock gmt" ". search ." ". bookmarks ." ". utils footer";
     gap: 1rem;
     align-items: baseline;
   }
@@ -15,8 +15,8 @@
   @media (max-width: 1200px) {
     .layout {
       grid-template-columns: [main] 1fr;
-      grid-template-rows: [clock-row] 3fr [search-row] 1fr [gmt-row] 1fr [bookmarks-row] 50vh [footer] auto;
-      grid-template-areas: "clock" "gmt" "search" "bookmarks" "footer";
+      grid-template-rows: [clock-row] 3fr [search-row] 1fr [gmt-row] 1fr [bookmarks-row] 50vh [footer] 1fr;
+      grid-template-areas: "clock" "gmt" "search" "bookmarks" "utils" "footer";
     }
   }
 

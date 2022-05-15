@@ -7,7 +7,6 @@
 
   $: nodes =
     $tree?.[0]?.children?.find((nodes) => nodes.id === "1")?.children ?? [];
-  $: console.log(nodes);
 </script>
 
 <div>

@@ -3,7 +3,6 @@
   let inputRef;
   let search = "";
   const onSubmit = (ev: SubmitEvent) => {
-    console.log(ev);
     ev.preventDefault();
     window.open(
       `https://www.google.com/search?q=${ev.target[0].value}`,

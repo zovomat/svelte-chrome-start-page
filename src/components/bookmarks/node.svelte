@@ -6,7 +6,6 @@
   export let node: BookmarkNode;
   let open = false;
   const toggle = () => {
-    console.log(!open, "crap");
     open = !open;
   };
 </script>

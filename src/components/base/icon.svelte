@@ -2,7 +2,6 @@
   export let open = false;
   let className = "closed";
   $: className = open ? "open" : "closed";
-  $: console.log(className);
 </script>
 
 <svg
