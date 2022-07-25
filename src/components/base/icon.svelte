@@ -16,7 +16,7 @@
 
 <style>
   svg {
-    fill: white;
+    fill: currentColor;
     transition: all 0.3s ease;
     transform: rotate(-90deg);
     filter: drop-shadow(0px 0px 1rem rgb(255, 98, 255));

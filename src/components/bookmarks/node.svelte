@@ -5,29 +5,34 @@
   import Item from "./item.svelte";
   export let node: BookmarkNode;
   let open = false;
+  export let root = false;
   const toggle = () => {
     open = !open;
   };
 </script>
 
-<!-- <div class="node-wrapper"> -->
-<div on:click={toggle} class="node-wrapper">
-  <h3 class="swing-in-top-fwd">
+<div class="node-wrapper" class:zero={root}>
+  <h3 class="swing-in-top-fwd" on:click={toggle}>
     <Icon {open} />
     {node?.title}
   </h3>
-</div>
-{#each node?.children as nodeChild}
-  {#if nodeChild.children}
-    <svelte:self node={nodeChild} />
-  {:else if open}
-    <Item item={nodeChild} />
+  {#if open}
+    {#each node?.children as nodeChild}
+      {#if nodeChild.children}
+        <svelte:self node={nodeChild} />
+      {:else}
+        <Item item={nodeChild} />
+      {/if}
+    {/each}
   {/if}
-{/each}
+</div>
 
-<!-- </div> -->
 <style>
   .node-wrapper {
     cursor: pointer;
+    padding: 0.5rem 1.5rem;
+  }
+  .zero {
+    padding: 0;
   }
 </style>

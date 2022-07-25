@@ -1,0 +1,39 @@
+.gruvbox-theme {
+	--bg1: #282828;
+	--bg2: #3c3836;
+	--color1: #eddbb2;
+	--color2: #83a598;
+	--color3: #b8bb26;
+}
+
+.gruvbox-theme h1, .gruvbox-theme h2 {
+	color: var(--color1);
+}
+
+.gruvbox-theme h3 {
+	color: var(--color3);
+}
+
+
+.gruvbox-theme a {
+	color: var(--color2);
+}
+
+.gruvbox-theme svg {
+	fill: var(--color3);
+	color: var(--color3);
+}
+
+.gruvbox-theme input {
+	color: var(--color1);
+	background: transparent;
+	border: 1px solid var(--color1);
+	border-radius: 8px;
+}
+
+.gruvbox-theme select {
+	color: var(--color2);
+	background: transparent;
+	border: 1px solid var(--color1);
+	border-radius: 8px;
+}

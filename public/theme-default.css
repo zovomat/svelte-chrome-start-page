@@ -1,0 +1,42 @@
+
+.default-theme {
+	--bg1: rgb(35, 12, 103);
+	--bg2: rgb(0, 0, 0);
+	--color1: #fff;
+	--color2: #78efff;
+	--color3: rgb(255, 98, 255);
+}
+
+.default-theme h1, .default-theme h2, .default-theme h3 {
+	text-shadow: 0px 0px 1.2rem var(--color3);
+}
+
+.default-theme input {
+	color: var(--color1);
+	background: rgba(0, 0, 0, 0.4);
+	border: none;
+	border-bottom: 1px solid var(--color1);
+	box-shadow: 0 6px 40px -20px var(--color2);
+	text-shadow: 0px 0px 12px var(--color2);
+	transition: box-shadow 0.3s;
+}
+
+.default-theme input:focus {
+	box-shadow: 0 6px 60px -20px var(--color2);
+}
+.default-theme select {
+	color: var(--color1);
+	border: none;
+
+}
+
+.default-theme a {
+	text-shadow: 0px 0px 12px var(--color2);
+	color: var(--color1)
+}
+
+.default-theme a:hover {
+    /* background: rgba(0, 0, 0, 0.2); */
+    text-shadow: 0px 0px 30px var(--color2), 2px 2px 8px #000;
+  }
+

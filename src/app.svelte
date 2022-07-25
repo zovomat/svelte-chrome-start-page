@@ -17,6 +17,6 @@
   <Clock />
   <Search />
   <Bookmarks />
-  <Cpu />
+  <!-- <Cpu /> -->
   <Footer />
 </Layout>

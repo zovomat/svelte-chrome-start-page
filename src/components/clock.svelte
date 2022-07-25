@@ -3,53 +3,59 @@
     const date = new Date();
     return [
       date.toLocaleTimeString([], {
-        timeStyle: "short",
+        // timeStyle: "short",
         hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
         // timeZoneName: "short",
       }),
       date.toDateString(),
       date.toLocaleTimeString([], {
-        timeStyle: "short",
+        // timeStyle: "short",
         hour12: false,
-        timeZone: "GMT",
-        // timeZoneName: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Europe/London",
+        timeZoneName: "short",
       }),
     ];
   };
 
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  let [time, day, gmt] = formatCurrentTime();
+  let [time, day, london] = formatCurrentTime();
 
   setInterval(() => {
     const td = formatCurrentTime();
     time = td[0];
     day = td[1];
-    gmt = td[2];
-  }, 10000);
+    london = td[2];
+  }, 1000);
 </script>
 
 <div class="clock">
-  <h1 class="big swing-in-top-fwd">{time}</h1>
-  <h2>{tz}</h2>
-  <h2 class="date swing-in-top-fwd-delayed">{day}</h2>
-</div>
-<div class="gmt">
-  <h2 class="swing-in-top-fwd-delayed">{gmt} GMT</h2>
+  <h2 class="date swing-in-top-fwd">{day}</h2>
+  <div class="time-row">
+    <h1 class="time swing-in-top-fwd">{time}</h1>
+    <h2 class="bst swing-in-top-fwd">{london}</h2>
+  </div>
 </div>
 
 <style>
   .clock {
-    display: grid;
+    display: flex;
     grid-area: clock;
+    height: 100%;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .time-row {
+    display: flex;
+    flex-direction: row;
     gap: 2rem;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "big tz" "date date";
-    align-items: baseline;
-  }
-  .date {
-    grid-area: date;
-  }
-  .gmt {
-    grid-area: gmt;
+    align-items: center;
+    justify-content: center;
   }
 </style>

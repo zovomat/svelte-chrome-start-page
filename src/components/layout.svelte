@@ -1,22 +1,26 @@
-<main class="layout bg fill ">
+<script lang="ts">
+  import { theme } from "../store";
+</script>
+
+<main class={`layout bg fill ${$theme}-theme`}>
   <slot />
 </main>
 
 <style>
   .layout {
     display: grid;
-    grid-template-columns: [left] 1fr [main] 3fr [side] 2fr;
-    grid-template-rows: [clock-row] 3fr [search-row] 1fr [bookmarks-row] 50vh [footer] auto;
-    grid-template-areas: ". clock gmt" ". search ." ". bookmarks ." ". utils footer";
-    gap: 1rem;
+    grid-template-columns: [left] 1fr [main] 3fr [side] 1fr;
+    grid-template-rows: [clock-row] 20vh [search-row] 1fr [bookmarks-row] 60vh [footer] auto;
+    grid-template-areas: "clock clock clock" ". search ." ". bookmarks ." ". footer .";
+    gap: 2rem;
     align-items: baseline;
   }
 
   @media (max-width: 1200px) {
     .layout {
       grid-template-columns: [main] 1fr;
-      grid-template-rows: [clock-row] 3fr [search-row] 1fr [gmt-row] 1fr [bookmarks-row] 50vh [footer] 1fr;
-      grid-template-areas: "clock" "gmt" "search" "bookmarks" "utils" "footer";
+      grid-template-rows: [clock-row] 20vh [search-row] 1fr [gmt-row] 1fr [bookmarks-row] 50vh [footer] 1fr;
+      grid-template-areas: "clock" "search" "bookmarks" "footer";
     }
   }
 
@@ -45,8 +49,8 @@
   .bg {
     background: radial-gradient(
       circle at var(--x) var(--y),
-      rgb(35, 12, 103) 0%,
-      rgb(0, 0, 0) 130%
+      var(--bg1) 0%,
+      var(--bg2) 130%
     );
     animation: rotateBg 10s linear infinite;
   }

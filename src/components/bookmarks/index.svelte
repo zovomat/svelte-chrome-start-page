@@ -7,22 +7,26 @@
 
   $: nodes =
     $tree?.[0]?.children?.find((nodes) => nodes.id === "1")?.children ?? [];
+  $: console.log(nodes);
 </script>
 
 <div>
   {#each nodes as node}
-    <Node {node} />
+    <Node {node} root />
   {/each}
 </div>
 
 <style>
   div {
     overflow-y: auto;
-    display: grid;
+    display: flex;
     grid-area: bookmarks;
-    grid-auto-rows: minmax(2.5rem, 1fr);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 1rem;
-    max-height: 50vh;
+    max-height: 100%;
+    user-select: none;
   }
 
   /* Designing for scroll-bar */

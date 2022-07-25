@@ -28,18 +28,12 @@
     width: auto;
     cursor: pointer;
     display: inline-block;
-    color: inherit;
-    padding: 0 1rem;
+    padding: 0.75rem;
     box-sizing: border-box;
     text-decoration: none;
-    text-shadow: 0px 0px 12px #78efff;
     /* background: rgba(0, 0, 0, 0); */
     transition: text-shadow 0.5s; /*background 0.5s, */
     text-align: start;
     text-overflow: ellipsis;
-  }
-  a:hover {
-    /* background: rgba(0, 0, 0, 0.2); */
-    text-shadow: 0px 0px 30px #78efff, 2px 2px 8px #000;
   }
 </style>
