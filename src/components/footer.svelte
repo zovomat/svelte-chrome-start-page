@@ -22,7 +22,7 @@
 
 <style>
   .footer {
-    height: 2rem;
+    height: auto;
     grid-area: footer;
     display: flex;
     flex-direction: row;
@@ -35,9 +35,7 @@
     margin: 0;
     height: fit-content;
   }
-  select:focus {
-    border: none;
-  }
+
   option {
     color: black;
   }

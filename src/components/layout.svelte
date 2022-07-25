@@ -19,7 +19,6 @@
   @media (max-width: 1200px) {
     .layout {
       grid-template-columns: [main] 1fr;
-      grid-template-rows: [clock-row] 20vh [search-row] 1fr [gmt-row] 1fr [bookmarks-row] 50vh [footer] 1fr;
       grid-template-areas: "clock" "search" "bookmarks" "footer";
     }
   }
@@ -32,64 +31,5 @@
     overflow: hidden;
     padding: 2rem;
     box-sizing: border-box;
-  }
-
-  @property --x {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 25%;
-  }
-
-  @property --y {
-    syntax: "<percentage>";
-    inherits: false;
-    initial-value: 25%;
-  }
-
-  .bg {
-    background: radial-gradient(
-      circle at var(--x) var(--y),
-      var(--bg1) 0%,
-      var(--bg2) 130%
-    );
-    animation: rotateBg 10s linear infinite;
-  }
-  @keyframes rotateBg {
-    0% {
-      --x: 20%;
-      --y: 20%;
-    }
-    12.5% {
-      --x: 10%;
-      --y: 50%;
-    }
-    25% {
-      --x: 20%;
-      --y: 80%;
-    }
-    37.5% {
-      --x: 50%;
-      --y: 90%;
-    }
-    50% {
-      --x: 80%;
-      --y: 80%;
-    }
-    62.5% {
-      --x: 90%;
-      --y: 50%;
-    }
-    75% {
-      --x: 80%;
-      --y: 20%;
-    }
-    87.5% {
-      --x: 50%;
-      --y: 10%;
-    }
-    100% {
-      --x: 20%;
-      --y: 20%;
-    }
   }
 </style>
