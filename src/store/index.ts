@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { BookmarkNode, CpuInfo, CpuStore } from "../types";
+import type { BookmarkNode, CpuStore } from "../types";
 
 export const tree = writable<BookmarkNode[]>();
 

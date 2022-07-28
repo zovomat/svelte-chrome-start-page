@@ -39,7 +39,7 @@
   {/each}
 </div>
 
-<style>
+<style lang="scss">
   .bar {
     background-color: white;
     width: 1px;

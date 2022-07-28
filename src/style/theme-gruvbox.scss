@@ -1,0 +1,52 @@
+.gruvbox-theme {
+	$bg1: #282828;
+	$bg2: #3c3836;
+	$color1: #eddbb2;
+	$color2: #a2c2b6;
+	$color3: #c0c264;
+
+	h1,
+	h2 {
+		color: $color1;
+	}
+
+	h3 {
+		color: $color3;
+	}
+
+
+	a {
+		color: $color2;
+	}
+
+	svg {
+		fill: $color3;
+		color: $color3;
+	}
+
+	input {
+		color: $color1;
+		background: transparent;
+		border: 1px solid $color1;
+		border-radius: 8px;
+	}
+
+	select {
+		color: $color2;
+		background: transparent;
+		border: 1px solid $color2;
+		border-radius: 8px;
+		outline: none;
+	}
+
+	select:focus,
+	select:focus-within,
+	select:active {
+		border: 1px solid $color2;
+		outline: none;
+	}
+
+	&.bg {
+		background: $bg1;
+	}
+}
